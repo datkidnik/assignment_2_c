@@ -10,7 +10,7 @@ void draughts::ncview::game_window::activate(void)
 {
     while(!quit)
     {
-        int playernum = EOF;
+        int playernum = themodel->get_current_player();
         try
         {
             display_board();
@@ -46,8 +46,7 @@ std::pair<std::pair<int,int>, std::pair<int,int>>
     std::pair<std::pair<int,int>,std::pair<int,int>> move;
     std::pair<int,int> start;
     std::pair<int,int> end;
-    std::cout << "Please enter your next move: " ;
-    get_input(input);
+    input = get_input("Please enter your next move");
     std::vector<std::string> moves;
     std::vector<std::string> coords;
     boost::split(moves, input, [](char ch){return ch == '-';});

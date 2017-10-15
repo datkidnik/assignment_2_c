@@ -6,6 +6,7 @@
 #include <map>
 #include <thread>
 #include <chrono>
+#include <random>
 
 #pragma once
 
@@ -33,6 +34,7 @@ namespace draughts
             int get_winner();
             int get_width();
             int get_height();
+            int get_random(int, int);
             static model * get_instance(void);
             static void delete_instance(void);
             virtual ~model(void);
