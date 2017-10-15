@@ -30,7 +30,7 @@ namespace draughts
 
             public:
             static controller* get_instance(void);
-            std::vector<std::unique_ptr<command>> 
+            std::vector<std::unique_ptr<command> > 
                 get_main_menu_commands(void);
             void start_game(std::map<int, std::string>);
             static void delete_instance(void);

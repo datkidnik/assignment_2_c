@@ -28,7 +28,7 @@ namespace draughts
             std::string players_to_string(void);
             static std::vector<std::string> player_strings(const player_map&, 
                 player_map&);
-            static std::vector<std::unique_ptr<nc_controller::command>>
+            static std::vector<std::unique_ptr<nc_controller::command> >
                 create_actions(const player_map&, player_map&);
             virtual ~player_selection_window(void){}
         };

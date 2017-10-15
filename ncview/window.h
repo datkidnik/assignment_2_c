@@ -29,7 +29,7 @@ namespace draughts
                 virtual ~input_cancelled(void){}
         };
         using command_vector = std::vector<std::unique_ptr<
-            nc_controller::command>>;
+            nc_controller::command> >;
         class window
         {
             protected: 
