@@ -3,6 +3,9 @@
 std::unique_ptr<draughts::model::model> draughts::model::model::instance =
 nullptr;
 
+// std::map<int, std::string> players;
+std::map<int, std::string> nameslist;
+
 draughts::model::model::model(void) 
 {
 }
@@ -32,7 +35,7 @@ int draughts::model::model::get_winner()
 
 std::string draughts::model::model::get_player_name(int id)
 {
-    return "";
+    return nameslist[id];
 }
 
 char draughts::model::model::get_token(int x ,int y)
@@ -47,10 +50,19 @@ void draughts::model::model::make_move(int playernum,
 
 void draughts::model::model::add_player(const std::string& p)
 {
+    nameslist.insert(std::pair<int, std::string>(nameslist.size(), p));
 }
 
 bool draughts::model::model::player_exists(const std::string& pname)
 {
+    std::map<int, std::string>::iterator it;
+    for(it = nameslist.begin(); it != nameslist.end(); it++)
+    {
+        if(it->second == pname) {
+            return true;
+        }
+    }
+
     return false;
 }
 
@@ -62,7 +74,6 @@ int draughts::model::model::get_current_player(void)
 std::map<int, std::string> draughts::model::model::get_player_list(void) 
     const
 {
-    std::map<int, std::string> nameslist;
     return nameslist;
 }
 
